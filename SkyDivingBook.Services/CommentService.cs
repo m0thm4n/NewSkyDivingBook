@@ -1,4 +1,5 @@
-﻿using SkyDivingBook.Contracts;
+﻿using SkyDivingBook.API.Models;
+using SkyDivingBook.Contracts;
 using SkyDivingBook.Data;
 using SkyDivingBook.Data.Entities;
 using SkyDivingBook.Models.Comment;
@@ -57,7 +58,7 @@ namespace SkyDivingBook.Services
                         Text = entity.Text,
                         Author = entity.Author,
                         PostId = entity.PostId,
-                        CommentPost = entity.CommentPost
+                        //CommentPost = entity.CommentPost
                     };
             }
         }

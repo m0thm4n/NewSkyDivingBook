@@ -8,6 +8,6 @@ namespace SkyDivingBook.Contracts
 {
     public interface ILikeService
     {
-        void CreateLike()
+        void CreateLike();
     }
 }

@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comment\CommentGetModel.cs" />
+    <Compile Include="Comment\CommentDetail.cs" />
+    <Compile Include="Comment\CommentEditModel.cs" />
+    <Compile Include="Comment\CommentListModel.cs" />
     <Compile Include="Like\PostLikeCreateModel.cs" />
     <Compile Include="Post\PostCreateModel.cs" />
     <Compile Include="Post\PostGetAllModel.cs" />

@@ -12,6 +12,6 @@ namespace SkyDivingBook.Models.Comment
         public string Text { get; set; }
         public int Author { get; set; }
         public int PostId { get; set; }
-        public virtual Post CommentPost { get; set; }
+        //public virtual Post CommentPost { get; set; }
     }
 }
