@@ -41,6 +41,12 @@ namespace SkyDivingBook.API.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
+                .Entity<Post>()
+                .HasRequired(e => e.User)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());

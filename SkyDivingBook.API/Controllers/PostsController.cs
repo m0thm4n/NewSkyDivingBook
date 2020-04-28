@@ -1,6 +1,6 @@
 ﻿using SkyDivingBook.Contracts;
 using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Post;
+using SkyDivingBook.Models.Posts;
 using SkyDivingBook.Services;
 using System;
 using System.Collections.Generic;

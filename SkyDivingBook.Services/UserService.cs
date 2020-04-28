@@ -14,9 +14,16 @@ namespace SkyDivingBook.Services
     {
         public void CreateUser(UserCreateModel userToCreate)
         {
+            var entity = new User()
+            {
+                UserId = userToCreate.UserId,
+                Name = userToCreate.Name,
+                Email = userToCreate.Email
+            };
+
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                context.Users.Add(new User(userToCreate));
+                context.Users.Add(entity);
                 context.SaveChanges();
             }
         }

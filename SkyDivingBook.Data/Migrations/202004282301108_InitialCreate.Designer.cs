@@ -13,7 +13,7 @@ namespace SkyDivingBook.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202004282130015_InitialCreate"; }
+            get { return "202004282301108_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

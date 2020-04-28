@@ -30,11 +30,11 @@ namespace SkyDivingBook.Data.Migrations
                         PostId = c.Int(nullable: false, identity: true),
                         Title = c.String(),
                         Text = c.String(),
-                        Author_UserId = c.Guid(),
+                        UserId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.PostId)
-                .ForeignKey("dbo.Users", t => t.Author_UserId)
-                .Index(t => t.Author_UserId);
+                .ForeignKey("dbo.Users", t => t.UserId)
+                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.Users",
@@ -51,10 +51,13 @@ namespace SkyDivingBook.Data.Migrations
                 c => new
                     {
                         ReplyId = c.Int(nullable: false, identity: true),
+                        CommentId = c.Int(nullable: false),
                         ReplyComment_CommentId = c.Int(),
                     })
                 .PrimaryKey(t => t.ReplyId)
+                .ForeignKey("dbo.Comments", t => t.CommentId, cascadeDelete: true)
                 .ForeignKey("dbo.Comments", t => t.ReplyComment_CommentId)
+                .Index(t => t.CommentId)
                 .Index(t => t.ReplyComment_CommentId);
             
             CreateTable(
@@ -136,15 +139,17 @@ namespace SkyDivingBook.Data.Migrations
             DropForeignKey("dbo.IdentityUserClaims", "ApplicationUser_Id", "dbo.ApplicationUsers");
             DropForeignKey("dbo.IdentityUserRoles", "IdentityRole_Id", "dbo.IdentityRoles");
             DropForeignKey("dbo.Replies", "ReplyComment_CommentId", "dbo.Comments");
+            DropForeignKey("dbo.Replies", "CommentId", "dbo.Comments");
             DropForeignKey("dbo.Comments", "UserId", "dbo.Users");
             DropForeignKey("dbo.Comments", "PostId", "dbo.Posts");
-            DropForeignKey("dbo.Posts", "Author_UserId", "dbo.Users");
+            DropForeignKey("dbo.Posts", "UserId", "dbo.Users");
             DropIndex("dbo.IdentityUserLogins", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaims", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRoles", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRoles", new[] { "IdentityRole_Id" });
             DropIndex("dbo.Replies", new[] { "ReplyComment_CommentId" });
-            DropIndex("dbo.Posts", new[] { "Author_UserId" });
+            DropIndex("dbo.Replies", new[] { "CommentId" });
+            DropIndex("dbo.Posts", new[] { "UserId" });
             DropIndex("dbo.Comments", new[] { "PostId" });
             DropIndex("dbo.Comments", new[] { "UserId" });
             DropTable("dbo.IdentityUserLogins");

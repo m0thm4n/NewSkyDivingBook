@@ -14,15 +14,14 @@ namespace SkyDivingBook.Data.Entities
         public int CommentId { get; set; }
         public string Text { get; set; }
 
-        [Required]
         [ForeignKey("User")]
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
 
-        [Required]
         [ForeignKey("Post")]
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
+        public int Author { get; set; }
 
         public Comment() { }
     }
