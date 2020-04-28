@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SkyDivingBook.Models.Post
 {
-    class PostGetAllModel
+    class PostGetModel
     {
         public int PostId { get; set; }
         public string Title { get; set; }
