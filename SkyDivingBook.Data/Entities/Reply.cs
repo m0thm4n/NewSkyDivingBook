@@ -8,5 +8,6 @@ namespace SkyDivingBook.Data.Entities
 {
     public class Reply
     {
+        public Comment ReplyComment { get; set; }
     }
 }

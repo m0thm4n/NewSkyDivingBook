@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SkyDivingBook.Models.Comment
+namespace SkyDivingBook.Models.Comments
 {
     class CommentGetModel
     {

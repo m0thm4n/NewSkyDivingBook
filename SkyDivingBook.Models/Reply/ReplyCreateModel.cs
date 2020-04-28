@@ -8,5 +8,6 @@ namespace SkyDivingBook.Models.Reply
 {
     class ReplyCreateModel
     {
+        public Comment Reply { get; set; }
     }
 }

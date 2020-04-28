@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SkyDivingBook.Models.Comment
+namespace SkyDivingBook.Models.Post
 {
-    public class CommentListModel
+    class PostGetModel
     {
-        public int CommentId { get; set; }
+        public int PostId { get; set; }
+        public string Title { get; set; }
         public string Text { get; set; }
-        public int Author { get; set; }
     }
 }
