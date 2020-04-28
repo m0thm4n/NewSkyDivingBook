@@ -1,5 +1,4 @@
-﻿using SkyDivingBook.Models.Comment;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,18 +16,14 @@ namespace SkyDivingBook.Data.Entities
 
         [Required]
         [ForeignKey("User")]
-        public int Author { get; set; }
+        public Guid UserId { get; set; }
+        public virtual User User { get; set; }
 
         [Required]
         [ForeignKey("Post")]
         public int PostId { get; set; }
-        public virtual Post CommentPost { get; set; }
+        public virtual Post Post { get; set; }
 
         public Comment() { }
-
-        public Comment(CommentCreateModel commentToCreate)
-        {
-            Text = commentToCreate.Text;
-        }
     }
 }

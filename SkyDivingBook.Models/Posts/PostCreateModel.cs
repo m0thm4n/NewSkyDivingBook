@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SkyDivingBook.Models.Post
+namespace SkyDivingBook.Models.Posts
 {
     public class PostCreateModel
     {

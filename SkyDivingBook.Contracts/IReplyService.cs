@@ -1,5 +1,5 @@
 ﻿using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Reply;
+using SkyDivingBook.Models.Replies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
