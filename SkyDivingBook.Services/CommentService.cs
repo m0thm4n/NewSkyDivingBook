@@ -58,7 +58,7 @@ namespace SkyDivingBook.Services
                         Text = entity.Text,
                         Author = entity.Author,
                         PostId = entity.PostId,
-                        // CommentPost = entity.CommentPost
+                        //CommentPost = entity.CommentPost
                     };
             }
         }
