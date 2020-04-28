@@ -46,6 +46,7 @@
     <Compile Include="Comments\CommentEditModel.cs" />
     <Compile Include="Comments\CommentListModel.cs" />
     <Compile Include="Likes\LikeCreateModel.cs" />
+    <Compile Include="Likes\LikeListModel.cs" />
     <Compile Include="Posts\PostCreateModel.cs" />
     <Compile Include="Posts\PostGetAllModel.cs" />
     <Compile Include="Comments\CommentCreateModel.cs" />
