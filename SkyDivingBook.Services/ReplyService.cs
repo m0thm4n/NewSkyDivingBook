@@ -1,4 +1,5 @@
 ﻿using SkyDivingBook.API.Models;
+using SkyDivingBook.Contracts;
 using SkyDivingBook.Data.Entities;
 using SkyDivingBook.Models.Reply;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SkyDivingBook.Services
 {
-    public class ReplyService
+    public class ReplyService : IReplyService
     {
         public void CreateReply(ReplyCreateModel replyToCreate)
         {

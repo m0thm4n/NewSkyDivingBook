@@ -11,7 +11,7 @@ namespace SkyDivingBook.Data.Entities
     {
         public Reply(ReplyCreateModel replyToCreate)
         {
-            ReplyComment = replyToCreate.ReplyComment;
+            // ReplyComment = replyToCreate.ReplyComment;
         }
 
         public int ReplyId { get; set; }

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SkyDivingBook.Models.Comments
+namespace SkyDivingBook.Models.Comment
 {
-    public class CommentListModel
+    public class CommentCreateModel
     {
-        public int CommentId { get; set; }
         public string Text { get; set; }
-        public int Author { get; set; }
     }
 }
+    

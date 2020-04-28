@@ -2,7 +2,7 @@
 using SkyDivingBook.Contracts;
 using SkyDivingBook.Data;
 using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Comments;
+using SkyDivingBook.Models.Comment;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,5 @@
 ﻿using SkyDivingBook.Contracts;
+using SkyDivingBook.Data.Entities;
 using SkyDivingBook.Models.Reply;
 using SkyDivingBook.Services;
 using System;
@@ -16,10 +17,10 @@ namespace SkyDivingBook.API.Controllers
 
         [HttpPost]
         [Route("create")]
-        public IHttpActionResult CreatePost([FromBody] ReplyCreateModel replyToCreate)
+        public IHttpActionResult CreateReply([FromBody] ReplyCreateModel replyToCreate)
         {
             _replyService = new ReplyService();
-            _replyService.CreatePost(replyToCreate);
+            _replyService.CreateReply(replyToCreate);
 
             return Ok();
         }
@@ -29,7 +30,7 @@ namespace SkyDivingBook.API.Controllers
         {
             _replyService = new ReplyService();
 
-            return Ok(_replyService.GetPosts());
+            return Ok(_replyService.GetReplies());
         }
 
         [HttpGet]
@@ -38,7 +39,7 @@ namespace SkyDivingBook.API.Controllers
         {
             _replyService = new ReplyService();
 
-            return _replyService.GetPost(id);
+            return _replyService.GetReply(id);
         }
 
         [HttpDelete]
@@ -47,7 +48,7 @@ namespace SkyDivingBook.API.Controllers
         {
             _replyService = new ReplyService();
 
-            _replyService.DeletePost(id);
+            _replyService.DeleteReply(id);
 
             return Ok();
         }
