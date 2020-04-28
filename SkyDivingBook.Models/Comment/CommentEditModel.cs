@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace SkyDivingBook.Models.Comment
 {
-    public class CommentCreateModel
+    public class CommentEditModel
     {
+        public int CommentId { get; set; }
         public string Text { get; set; }
     }
 }
