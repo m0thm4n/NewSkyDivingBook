@@ -11,3 +11,4 @@ namespace SkyDivingBook.Models.Comment
         public string Text { get; set; }
     }
 }
+    

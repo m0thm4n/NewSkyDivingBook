@@ -5,8 +5,6 @@ using SkyDivingBook.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace SkyDivingBook.API.Controllers
@@ -16,6 +14,7 @@ namespace SkyDivingBook.API.Controllers
         private IPostService _postService;
 
         [HttpPost]
+        [Route("create")]
         public IHttpActionResult CreatePost([FromBody] PostCreateModel postToCreate)
         {
             _postService = new PostService();
@@ -30,6 +29,26 @@ namespace SkyDivingBook.API.Controllers
             _postService = new PostService();
 
             return Ok(_postService.GetPosts());
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public Post GetPost(int id)
+        {
+            _postService = new PostService();
+
+            return _postService.GetPost(id);
+        }
+
+        [HttpDelete]
+        [Route("delete/{id}")]
+        public IHttpActionResult DeletePost(int id)
+        {
+            _postService = new PostService();
+
+            _postService.DeletePost(id);
+
+            return Ok();
         }
     }
 }
