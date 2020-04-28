@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyDivingBook.API", "SkyDivingBook.API\SkyDivingBook.API.csproj", "{8049BD10-3958-491A-993E-8DBA357CF510}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyDivingBook.Data", "SkyDivingBook.Data\SkyDivingBook.Data.csproj", "{11D0C99E-E728-4ED9-BA15-57679DFCB49C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyDivingBook.Services", "SkyDivingBook.Services\SkyDivingBook.Services.csproj", "{B508D2AC-6B28-4D39-8CE6-43C8FB546AE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyDivingBook.Models", "SkyDivingBook.Models\SkyDivingBook.Models.csproj", "{E086A631-3517-4748-B5B2-B450946F971D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyDivingBook.Contracts", "SkyDivingBook.Contracts\SkyDivingBook.Contracts.csproj", "{8B5A8495-D110-4232-AD9D-FAE3330C617A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8049BD10-3958-491A-993E-8DBA357CF510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8049BD10-3958-491A-993E-8DBA357CF510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8049BD10-3958-491A-993E-8DBA357CF510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8049BD10-3958-491A-993E-8DBA357CF510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D0C99E-E728-4ED9-BA15-57679DFCB49C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D0C99E-E728-4ED9-BA15-57679DFCB49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D0C99E-E728-4ED9-BA15-57679DFCB49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D0C99E-E728-4ED9-BA15-57679DFCB49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B508D2AC-6B28-4D39-8CE6-43C8FB546AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B508D2AC-6B28-4D39-8CE6-43C8FB546AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B508D2AC-6B28-4D39-8CE6-43C8FB546AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B508D2AC-6B28-4D39-8CE6-43C8FB546AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E086A631-3517-4748-B5B2-B450946F971D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E086A631-3517-4748-B5B2-B450946F971D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E086A631-3517-4748-B5B2-B450946F971D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E086A631-3517-4748-B5B2-B450946F971D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B5A8495-D110-4232-AD9D-FAE3330C617A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5A8495-D110-4232-AD9D-FAE3330C617A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5A8495-D110-4232-AD9D-FAE3330C617A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5A8495-D110-4232-AD9D-FAE3330C617A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A434D596-BCDB-4935-8D2C-E8728C493E8E}
+	EndGlobalSection
+EndGlobal
