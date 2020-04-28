@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SkyDivingBook.Models.Reply
 {
-    class ReplyCreateModel
+    public class ReplyCreateModel
     {
-        public Comment Reply { get; set; }
+        public Comment ReplyComment { get; set; }
     }
 }
