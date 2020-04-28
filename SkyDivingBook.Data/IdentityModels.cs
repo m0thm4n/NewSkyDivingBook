@@ -37,6 +37,7 @@ namespace SkyDivingBook.API.Models
         public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Reply> Replies { get; set; }
+        public DbSet<Like> Likes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

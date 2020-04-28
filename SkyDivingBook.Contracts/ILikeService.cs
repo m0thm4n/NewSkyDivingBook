@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SkyDivingBook.Data.Entities;
+using SkyDivingBook.Models.Likes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,8 @@ namespace SkyDivingBook.Contracts
 {
     public interface ILikeService
     {
-        void CreateLike();
+        void CreateLike(LikeCreateModel likeToCreate);
+        IEnumerable<Like> GetAllLikesOfPost(LikeListModel likeToCreate);
+        void DeleteLike(int likeId);
     }
 }
