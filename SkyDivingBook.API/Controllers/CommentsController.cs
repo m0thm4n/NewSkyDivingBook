@@ -1,5 +1,5 @@
 ﻿using SkyDivingBook.Contracts;
-using SkyDivingBook.Models.Comment;
+using SkyDivingBook.Models.Comments;
 using SkyDivingBook.Services;
 using System;
 using System.Collections.Generic;

@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SkyDivingBook.Models.Comment
+namespace SkyDivingBook.Models.Replies
 {
-    public class CommentCreateModel
+    class ReplyGetModel
     {
-        public string Text { get; set; }
     }
 }
-    

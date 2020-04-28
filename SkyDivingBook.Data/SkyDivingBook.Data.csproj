@@ -81,6 +81,11 @@
     <Compile Include="Entities\Reply.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202004282130015_InitialCreate.cs" />
+    <Compile Include="Migrations\202004282130015_InitialCreate.Designer.cs">
+      <DependentUpon>202004282130015_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,10 +93,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SkyDivingBook.Models\SkyDivingBook.Models.csproj">
-      <Project>{e086a631-3517-4748-b5b2-b450946f971d}</Project>
-      <Name>SkyDivingBook.Models</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Migrations\202004282130015_InitialCreate.resx">
+      <DependentUpon>202004282130015_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

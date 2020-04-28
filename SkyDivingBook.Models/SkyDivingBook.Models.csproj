@@ -42,20 +42,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comment\CommentDetail.cs" />
-    <Compile Include="Comment\CommentEditModel.cs" />
-    <Compile Include="Comment\CommentListModel.cs" />
-    <Compile Include="Like\PostLikeCreateModel.cs" />
-    <Compile Include="Post\PostCreateModel.cs" />
-    <Compile Include="Post\PostGetAllModel.cs" />
-    <Compile Include="Comment\CommentCreateModel.cs" />
-    <Compile Include="Post\PostGetModel.cs" />
-    <Compile Include="Reply\ReplyCreateModel.cs" />
-    <Compile Include="Reply\ReplyGetModel.cs" />
+    <Compile Include="Comments\CommentDetail.cs" />
+    <Compile Include="Comments\CommentEditModel.cs" />
+    <Compile Include="Comments\CommentListModel.cs" />
+    <Compile Include="Likes\PostLikeCreateModel.cs" />
+    <Compile Include="Posts\PostCreateModel.cs" />
+    <Compile Include="Posts\PostGetAllModel.cs" />
+    <Compile Include="Comments\CommentCreateModel.cs" />
+    <Compile Include="Posts\PostGetModel.cs" />
+    <Compile Include="Replies\ReplyCreateModel.cs" />
+    <Compile Include="Replies\ReplyGetModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\UserCreateModel.cs" />
     <Compile Include="Users\UserGetListModel.cs" />
     <Compile Include="Users\UserGetModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SkyDivingBook.Data\SkyDivingBook.Data.csproj">
+      <Project>{11d0c99e-e728-4ed9-ba15-57679dfcb49c}</Project>
+      <Name>SkyDivingBook.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
