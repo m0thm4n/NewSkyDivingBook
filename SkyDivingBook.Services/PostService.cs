@@ -39,19 +39,43 @@ namespace SkyDivingBook.Services
             }
         }
 
-        public Post GetPost(int id)
+        public PostGetModel GetPost(int id)
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                return context.Posts.Find(id);
+                var entity =
+                   context
+                   .Posts
+                   .Select(
+                       x => new PostGetModel
+                       {
+                           PostId = x.PostId,
+                           Title = x.Title,
+                           Text = x.Text
+                           // Author = x.Author
+                       });
+
+                return (PostGetModel)entity;
             }
         }
 
-        public IEnumerable<Post> GetPosts()
+        public IEnumerable<PostGetAllModel> GetPosts()
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                return context.Posts.ToList();
+                var entities =
+                   context
+                   .Posts
+                   .Select(
+                       x => new PostGetAllModel
+                       {
+                           PostId = x.PostId,
+                           Title = x.Title,
+                           Text = x.Text
+                            // Author = x.Author
+                        });
+
+                return entities.ToArray();
             }
         }
     }

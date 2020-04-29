@@ -17,7 +17,6 @@ namespace SkyDivingBook.API.Controllers
         private IReplyService _replyService;
 
         [HttpPost]
-        [Route("create")]
         public IHttpActionResult CreateReply([FromBody] ReplyCreateModel replyToCreate)
         {
             _replyService = new ReplyService();
@@ -36,7 +35,7 @@ namespace SkyDivingBook.API.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public Reply GetPost(int id)
+        public ReplyGetModel GetPost(int id)
         {
             _replyService = new ReplyService();
 

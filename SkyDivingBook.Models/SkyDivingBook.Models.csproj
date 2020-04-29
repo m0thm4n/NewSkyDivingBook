@@ -54,6 +54,7 @@
     <Compile Include="Comments\CommentCreateModel.cs" />
     <Compile Include="Posts\PostGetModel.cs" />
     <Compile Include="Replies\ReplyCreateModel.cs" />
+    <Compile Include="Replies\ReplyGetAllModel.cs" />
     <Compile Include="Replies\ReplyGetModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\UserCreateModel.cs" />

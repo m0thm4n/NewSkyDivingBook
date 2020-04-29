@@ -11,8 +11,8 @@ namespace SkyDivingBook.Contracts
     public interface IPostService
     {
         void CreatePost(PostCreateModel postToCreate);
-        IEnumerable<Post> GetPosts();
+        IEnumerable<PostGetAllModel> GetPosts();
         void DeletePost(int id);
-        Post GetPost(int id);
+        PostGetModel GetPost(int id);
     }
 }

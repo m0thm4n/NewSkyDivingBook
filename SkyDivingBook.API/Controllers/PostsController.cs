@@ -33,7 +33,7 @@ namespace SkyDivingBook.API.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public Post GetPost(int id)
+        public PostGetModel GetPost(int id)
         {
             _postService = new PostService();
 

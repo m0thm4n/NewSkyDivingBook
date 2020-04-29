@@ -11,8 +11,8 @@ namespace SkyDivingBook.Contracts
     public interface IReplyService
     {
         void CreateReply(ReplyCreateModel userToCreate);
-        List<Reply> GetReplies();
+        IEnumerable<ReplyGetAllModel> GetReplies();
         void DeleteReply(int id);
-        Reply GetReply(int id);
+        ReplyGetModel GetReply(int id);
     }
 }
