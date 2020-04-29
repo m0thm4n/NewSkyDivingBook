@@ -9,6 +9,9 @@ namespace SkyDivingBook.Models.Comments
     public class CommentCreateModel
     {
         public string Text { get; set; }
+        public int PostId { get; set; }
+        public Guid UserId { get; set; }
+        public int Author { get; set; }
     }
 }
     

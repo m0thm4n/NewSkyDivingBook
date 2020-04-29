@@ -36,7 +36,7 @@ namespace SkyDivingBook.Services
             }
         }
 
-        public List<User> GetUsers()
+        public IEnumerable<User> GetUsers()
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {

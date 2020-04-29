@@ -1,6 +1,7 @@
 ﻿using SkyDivingBook.API.Models;
 using SkyDivingBook.Contracts;
 using SkyDivingBook.Data.Entities;
+using SkyDivingBook.Models.Posts;
 using SkyDivingBook.Models.Replies;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ namespace SkyDivingBook.Services
             var entity = new Reply()
             {
                 ReplyId = replyToCreate.ReplyId,
-                ReplyComment = replyToCreate.ReplyComment
+                ReplyComment = replyToCreate.ReplyComment,
+                CommentId = replyToCreate.CommentId
             };
 
             using (ApplicationDbContext context = new ApplicationDbContext())
@@ -36,19 +38,41 @@ namespace SkyDivingBook.Services
             }
         }
 
-        public List<Reply> GetReplies()
+        public IEnumerable<ReplyGetAllModel> GetReplies()
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                return context.Replies.ToList();
+                var entities =
+                   context
+                   .Replies
+                   .Select(
+                       x => new ReplyGetAllModel
+                       {
+                           ReplyId = x.ReplyId,
+                           ReplyComment = x.ReplyComment
+                           // Author = x.Author
+                       });
+
+                return entities.ToArray();
             }
         }
 
-        public Reply GetReply(int id)
+        public ReplyGetModel GetReply(int id)
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                return context.Replies.Find(id);
+                var entity =
+                   context
+                   .Replies
+                   .Select(
+                       x => new ReplyGetModel
+                       {
+                           ReplyId = x.ReplyId,
+                           ReplyComment = x.ReplyComment
+                           // Author = x.Author
+                       });
+
+                return (ReplyGetModel)entity;
             }
         }
     }

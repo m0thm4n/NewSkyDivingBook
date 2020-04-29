@@ -11,5 +11,6 @@ namespace SkyDivingBook.Models.Replies
     {
         public int ReplyId { get; set; }
         public Comment ReplyComment { get; set; }
+        public int CommentId { get; set; }
     }
 }

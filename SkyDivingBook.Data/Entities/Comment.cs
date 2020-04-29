@@ -21,7 +21,13 @@ namespace SkyDivingBook.Data.Entities
         [ForeignKey("Post")]
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
-        public int Author { get; set; }
+        public Guid Author
+        {
+            get
+            {
+                return UserId;
+            }
+        }
 
         public Comment() { }
     }

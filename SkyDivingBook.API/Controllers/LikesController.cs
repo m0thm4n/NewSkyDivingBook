@@ -22,11 +22,11 @@ namespace SkyDivingBook.API.Controllers
         }
 
         [HttpGet]
-        [Route("{id}")]
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult GetLike(int id)
         {
-            LikeService likeService = CreateLikeService();
-            return Ok(likeService.GetAllLikesOfPost(id));
+            LikeService likeService = CreateLikeService(); 
+            likeService.GetAllLikesOfPost(id);
+            return Ok();
         }
 
         [HttpDelete]

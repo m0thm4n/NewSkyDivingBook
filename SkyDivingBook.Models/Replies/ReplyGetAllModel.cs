@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SkyDivingBook.Models.Replies
 {
-    public class ReplyGetModel
+    public class ReplyGetAllModel
     {
         public int ReplyId { get; set; }
         public Comment ReplyComment { get; set; }

@@ -11,7 +11,7 @@ namespace SkyDivingBook.Contracts
     public interface IUserService
     {
         void CreateUser(UserCreateModel userToCreate);
-        List<User> GetUsers();
+        IEnumerable<User> GetUsers();
         void DeleteUser(int id);
         User GetUser(int id);
     }
