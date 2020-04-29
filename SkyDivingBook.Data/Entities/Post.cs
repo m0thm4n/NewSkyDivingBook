@@ -1,7 +1,9 @@
-﻿using SkyDivingBook.Models.Post;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +12,13 @@ namespace SkyDivingBook.Data.Entities
 {
     public class Post
     {
-        public Post(PostCreateModel postToCreate)
-        {
-            PostId = postToCreate.PostId;
-            Title = postToCreate.Title;
-            Text = postToCreate.Text;
-        }
-
+        [Key]
         public int PostId { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
-        public User Author { get; set; }
+        [ForeignKey("User")]
+        // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid UserId { get; set; }
+        public virtual User User { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using SkyDivingBook.API.Models;
 using SkyDivingBook.Contracts;
 using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Post;
+using SkyDivingBook.Models.Posts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +14,17 @@ namespace SkyDivingBook.Services
     {
         public void CreatePost(PostCreateModel postToCreate)
         {
+            var entity = new Post()
+            {
+                PostId = postToCreate.PostId,
+                Title = postToCreate.Title,
+                Text = postToCreate.Text,
+                UserId = postToCreate.UserId
+            };
+
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                context.Posts.Add(new Post(postToCreate));
+                context.Posts.Add(entity);
                 context.SaveChanges();
             }
         }
@@ -31,19 +39,43 @@ namespace SkyDivingBook.Services
             }
         }
 
-        public Post GetPost(int id)
+        public PostGetModel GetPost(int id)
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                return context.Posts.Find(id);
+                var entity =
+                   context
+                   .Posts
+                   .Select(
+                       x => new PostGetModel
+                       {
+                           PostId = x.PostId,
+                           Title = x.Title,
+                           Text = x.Text
+                           // Author = x.Author
+                       });
+
+                return (PostGetModel)entity;
             }
         }
 
-        public IEnumerable<Post> GetPosts()
+        public IEnumerable<PostGetAllModel> GetPosts()
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                return context.Posts.ToList();
+                var entities =
+                   context
+                   .Posts
+                   .Select(
+                       x => new PostGetAllModel
+                       {
+                           PostId = x.PostId,
+                           Title = x.Title,
+                           Text = x.Text
+                            // Author = x.Author
+                        });
+
+                return entities.ToArray();
             }
         }
     }

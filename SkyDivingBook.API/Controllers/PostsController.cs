@@ -1,6 +1,6 @@
 ﻿using SkyDivingBook.Contracts;
 using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Post;
+using SkyDivingBook.Models.Posts;
 using SkyDivingBook.Services;
 using System;
 using System.Collections.Generic;
@@ -9,12 +9,12 @@ using System.Web.Http;
 
 namespace SkyDivingBook.API.Controllers
 {
+    [RoutePrefix("api/[controller]")]
     public class PostsController : ApiController
     {
         private IPostService _postService;
 
         [HttpPost]
-        [Route("create")]
         public IHttpActionResult CreatePost([FromBody] PostCreateModel postToCreate)
         {
             _postService = new PostService();
@@ -33,7 +33,7 @@ namespace SkyDivingBook.API.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public Post GetPost(int id)
+        public PostGetModel GetPost(int id)
         {
             _postService = new PostService();
 

@@ -2,7 +2,7 @@
 using SkyDivingBook.Contracts;
 using SkyDivingBook.Data;
 using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Comment;
+using SkyDivingBook.Models.Comments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,10 @@ namespace SkyDivingBook.Services
         {
             var entity = new Comment()
             {
-                Text = commentToCreate.Text
+                Text = commentToCreate.Text,
+                UserId = commentToCreate.UserId,
+                PostId = commentToCreate.PostId,
+                // Author = commentToCreate.Author,
             };
 
             using (ApplicationDbContext ctx = new ApplicationDbContext())
@@ -39,7 +42,7 @@ namespace SkyDivingBook.Services
                         {
                             CommentId = x.CommentId,
                             Text = x.Text,
-                            Author = x.Author
+                            // Author = x.Author
                         });
 
                 return entities.ToArray();
@@ -56,9 +59,9 @@ namespace SkyDivingBook.Services
                     {
                         CommentId = entity.CommentId,
                         Text = entity.Text,
-                        Author = entity.Author,
+                        // Author = entity.Author,
                         PostId = entity.PostId,
-                        //CommentPost = entity.CommentPost
+                        Post = entity.Post
                     };
             }
         }

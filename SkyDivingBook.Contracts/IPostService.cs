@@ -1,5 +1,5 @@
 ﻿using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Post;
+using SkyDivingBook.Models.Posts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +11,8 @@ namespace SkyDivingBook.Contracts
     public interface IPostService
     {
         void CreatePost(PostCreateModel postToCreate);
-        IEnumerable<Post> GetPosts();
+        IEnumerable<PostGetAllModel> GetPosts();
         void DeletePost(int id);
-        Post GetPost(int id);
+        PostGetModel GetPost(int id);
     }
 }

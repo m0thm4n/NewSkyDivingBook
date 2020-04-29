@@ -1,5 +1,5 @@
 ﻿using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Reply;
+using SkyDivingBook.Models.Replies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +11,8 @@ namespace SkyDivingBook.Contracts
     public interface IReplyService
     {
         void CreateReply(ReplyCreateModel userToCreate);
-        List<Reply> GetReplies();
+        IEnumerable<ReplyGetAllModel> GetReplies();
         void DeleteReply(int id);
-        Reply GetReply(int id);
+        ReplyGetModel GetReply(int id);
     }
 }
