@@ -11,6 +11,7 @@ using System.Web.Http;
 
 namespace SkyDivingBook.API.Controllers
 {
+    [RoutePrefix("api/[controller]")]
     public class RepliesController : ApiController
     {
         private IReplyService _replyService;

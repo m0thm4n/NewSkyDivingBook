@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace SkyDivingBook.API.Controllers
 {
+    [RoutePrefix("api/[controller]")]
     public class LikeController : ApiController
     {
         public IHttpActionResult Post(LikeCreateModel like)
@@ -32,7 +33,7 @@ namespace SkyDivingBook.API.Controllers
             return Ok();
         }
 
-        private LikeService CreateLikeService()
+        public LikeService CreateLikeService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var likeService = new LikeService(userId);
