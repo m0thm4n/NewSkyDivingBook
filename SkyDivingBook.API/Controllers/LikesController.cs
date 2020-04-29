@@ -11,8 +11,9 @@ using System.Web.Http;
 namespace SkyDivingBook.API.Controllers
 {
     [RoutePrefix("api/[controller]")]
-    public class LikeController : ApiController
+    public class LikesController : ApiController
     {
+        [HttpPost]
         public IHttpActionResult Post(LikeCreateModel like)
         {
             LikeService likeService = CreateLikeService();
@@ -20,12 +21,15 @@ namespace SkyDivingBook.API.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [Route("{id}")]
         public IHttpActionResult Get(int id)
         {
             LikeService likeService = CreateLikeService();
             return Ok(likeService.GetAllLikesOfPost(id));
         }
 
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             LikeService likeService = CreateLikeService();
@@ -33,7 +37,7 @@ namespace SkyDivingBook.API.Controllers
             return Ok();
         }
 
-        public LikeService CreateLikeService()
+        private LikeService CreateLikeService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var likeService = new LikeService(userId);
