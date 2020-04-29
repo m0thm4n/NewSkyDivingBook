@@ -13,9 +13,6 @@ namespace SkyDivingBook.Data.Entities
         [Key]
         public int LikeId { get; set; }
         public int PostId { get; set; }
-
-        [ForeignKey("User")]
         public Guid UserId { get; set; }
-        public virtual User User { get; set; }
     }
 }
