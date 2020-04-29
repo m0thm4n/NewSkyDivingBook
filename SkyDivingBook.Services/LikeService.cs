@@ -39,7 +39,7 @@ namespace SkyDivingBook.Services
 			{
 				var request = ctx.Likes.Where(e => e.PostId == postId).Select(e => new LikeListItem
 				{
-					Name = ctx.Posts.Single(x => x.PostId == postId).Author.Name
+					Name = ctx.Posts.Single(x => x.PostId == postId).User.Name
 				});
 
 				return request.ToArray();
