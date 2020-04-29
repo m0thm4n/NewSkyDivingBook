@@ -1,5 +1,7 @@
-﻿using SkyDivingBook.Contracts;
+﻿using SkyDivingBook.API.Models;
+using SkyDivingBook.Contracts;
 using SkyDivingBook.Data.Entities;
+using SkyDivingBook.Models.Likes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,17 +20,40 @@ namespace SkyDivingBook.Services
 
 		public void CreateLike(LikeCreateModel likeToCreate)
 		{
-			
+			var entity = new Like()
+			{
+				UserId = _userId,
+				PostId = likeToCreate.PostId
+			};
+
+			using (var ctx = new ApplicationDbContext())
+			{
+				ctx.Likes.Add(entity);
+				ctx.SaveChanges();
+			}
 		}
 
-		public IEnumerable<Like> GetAllLikesOfPost(int postId)
+		public IEnumerable<LikeListItem> GetAllLikesOfPost(int postId)
 		{
-			throw new NotImplementedException();
+			using (var ctx = new ApplicationDbContext())
+			{
+				var request = ctx.Likes.Where(e => e.PostId == postId).Select(e => new LikeListItem
+				{
+					Name = ctx.Posts.Single(x => x.PostId == postId).Author.Name
+				});
+
+				return request.ToArray();
+			}
 		}
 
-		public void DeleteLike()
+		public void DeleteLike(int likeId)
 		{
-			throw new NotImplementedException();
+			using (var ctx = new ApplicationDbContext())
+			{
+				var entity = ctx.Likes.Single(e => e.LikeId == likeId && e.UserId == _userId);
+				ctx.Likes.Remove(entity);
+				ctx.SaveChanges();
+			}
 		}
 	}
 }

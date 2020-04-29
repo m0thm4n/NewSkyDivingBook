@@ -11,7 +11,7 @@ namespace SkyDivingBook.Contracts
     public interface ILikeService
     {
         void CreateLike(LikeCreateModel likeToCreate);
-        IEnumerable<Like> GetAllLikesOfPost(LikeListModel likeToCreate);
+        IEnumerable<LikeListItem> GetAllLikesOfPost(int postId);
         void DeleteLike(int likeId);
     }
 }
