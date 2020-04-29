@@ -1,7 +1,7 @@
 ﻿using SkyDivingBook.API.Models;
 using SkyDivingBook.Contracts;
 using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Post;
+using SkyDivingBook.Models.Posts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +14,17 @@ namespace SkyDivingBook.Services
     {
         public void CreatePost(PostCreateModel postToCreate)
         {
+            var entity = new Post()
+            {
+                PostId = postToCreate.PostId,
+                Title = postToCreate.Title,
+                Text = postToCreate.Text,
+                UserId = postToCreate.UserId
+            };
+
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                context.Posts.Add(new Post(postToCreate));
+                context.Posts.Add(entity);
                 context.SaveChanges();
             }
         }

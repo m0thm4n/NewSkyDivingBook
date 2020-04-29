@@ -1,7 +1,7 @@
 ﻿using SkyDivingBook.API.Models;
 using SkyDivingBook.Contracts;
 using SkyDivingBook.Data.Entities;
-using SkyDivingBook.Models.Reply;
+using SkyDivingBook.Models.Replies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +14,15 @@ namespace SkyDivingBook.Services
     {
         public void CreateReply(ReplyCreateModel replyToCreate)
         {
+            var entity = new Reply()
+            {
+                ReplyId = replyToCreate.ReplyId,
+                ReplyComment = replyToCreate.ReplyComment
+            };
+
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                context.Replies.Add(new Reply(replyToCreate));
+                context.Replies.Add(entity);
                 context.SaveChanges();
             }
         }
