@@ -16,6 +16,7 @@ namespace SkyDivingBook.Data.Entities
         public string Title { get; set; }
         public string Text { get; set; }
         [ForeignKey("User")]
+        // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
     }

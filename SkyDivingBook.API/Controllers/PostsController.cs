@@ -9,12 +9,12 @@ using System.Web.Http;
 
 namespace SkyDivingBook.API.Controllers
 {
+    [RoutePrefix("api/[controller]")]
     public class PostsController : ApiController
     {
         private IPostService _postService;
 
         [HttpPost]
-        [Route("create")]
         public IHttpActionResult CreatePost([FromBody] PostCreateModel postToCreate)
         {
             _postService = new PostService();

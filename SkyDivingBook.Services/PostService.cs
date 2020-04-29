@@ -18,7 +18,8 @@ namespace SkyDivingBook.Services
             {
                 PostId = postToCreate.PostId,
                 Title = postToCreate.Title,
-                Text = postToCreate.Text
+                Text = postToCreate.Text,
+                UserId = postToCreate.UserId
             };
 
             using (ApplicationDbContext context = new ApplicationDbContext())

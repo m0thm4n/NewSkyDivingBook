@@ -16,7 +16,6 @@ namespace SkyDivingBook.Services
         {
             var entity = new User()
             {
-                UserId = userToCreate.UserId,
                 Name = userToCreate.Name,
                 Email = userToCreate.Email
             };
